@@ -29,3 +29,20 @@ sentences = [
 
 
 # Good luck! You can write all the code in this file.
+counts = {}
+for s in sentences:
+    for w in s.split():
+        w = w.replace(',', '')
+        w = w.replace('?', '')
+        w = w.lower()
+        if w not in counts:
+            counts[w] = 1
+        else:
+            counts[w] += 1
+
+ranking = list(counts.items())
+ranking.sort(key=lambda t : t[1], reverse=True)
+top3 = ranking[:3]
+print(ranking)
+for i, w in enumerate(top3):
+    print(f'{i}. {w[0]}')
