@@ -8,8 +8,9 @@ class Importer:
 
     def read_tasks(self):
         # TODO odczytaj plik i zdekoduj treść tutaj
-        pass
+        with open('taski.json') as f:
+            return json.load(f)
 
     def get_tasks(self):
         # TODO zwróć zdekodowane taski tutaj
-        pass
+        return self.read_tasks()
