@@ -10,6 +10,7 @@ class App:
         self.amount = command_arguments[1]
         self.base_currency = command_arguments[2]
         self.target_currency = command_arguments[3]
+        print(self.get_ratio())
 
     def get_result_equation(self):
         base_currency_amount = str(self.amount) + " " + str(self.base_currency)
